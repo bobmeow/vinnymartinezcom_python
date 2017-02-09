@@ -20,11 +20,11 @@ class MainPage(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.write('something else!')
 
-class Turd(webapp2.RequestHandler):
+class Page(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Turdkey!')
+        self.response.write('this is page!')
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/turd.html', Turd),
+    ('/page.html', Page),
 ], debug=True)
